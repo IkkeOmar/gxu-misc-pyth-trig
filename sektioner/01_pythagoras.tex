@@ -1,76 +1,65 @@
-\section{3. Pythagoras' sætning}
+\section{Pythagoras' sætning}
 
 \kompetence{Regning} \kompetence{Tankegang}
 
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[>=Stealth,scale=2.2]
-  % Retvinklet trekant
   \coordinate (A) at (0,0);
   \coordinate (B) at (2.4,0);
   \coordinate (C) at (0,1.8);
 
-  % Trekant
   \draw[very thick] (A) -- (B) node[midway,below] {$a$} -- (C) node[midway,right] {$c$} -- cycle;
 
-  % Højre vinkel-markør
   \draw (0,0.18) -- (0.18,0.18) -- (0.18,0);
 
-  % Vinkel-hypotenuse navn
   \node[anchor=south west] at (0.6,0.35) {$\theta$};
-
-  % Katet-navne
   \node[below left] at (0.6,-0.05) {$b$};
 
-  % Areal-tekster
   \node[anchor=south] at (1.2,0) {$\text{Areal}=a\cdot b/2$};
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}[>=Stealth,scale=2.2]
-  % Klassisk Pythagoras-bevis: stor kvadrat (a+b)² med fire trekanter
-  % Trekant-hjørner
   \coordinate (A) at (0,0);
   \coordinate (B) at (4.2,0);
   \coordinate (C) at (4.2,3.2);
   \coordinate (D) at (0,3.2);
-  % Trekanthjørner indefra
   \coordinate (T1) at (1.2,0);
   \coordinate (T2) at (4.2,1.2);
   \coordinate (T3) at (3.0,3.2);
   \coordinate (T4) at (0,2.0);
-  % Diagonal kvadrat hjørner
   \coordinate (H1) at (1.2,1.2);
   \coordinate (H2) at (3.0,1.2);
   \coordinate (H3) at (3.0,2.0);
   \coordinate (H4) at (1.2,2.0);
 
-  % Store kvadrat yderside
   \draw[thick] (A) rectangle (C);
-  % Fire trekanter
   \draw[fill=gxu-accent!20] (A) -- (T1) -- (H1) -- (H4) -- cycle;
   \draw[fill=gxu-accent!20] (T1) -- (B) -- (H2) -- (H1) -- cycle;
   \draw[fill=gxu-accent!20] (H2) -- (C) -- (T3) -- (H3) -- cycle;
   \draw[fill=gxu-accent!20] (H4) -- (H3) -- (T4) -- (D) -- cycle;
-  % Indre kvadrat (hypotenusen c)
-  \draw[very thick,gxu-purple] (H1) -- (H2) -- (H3) -- (H4) -- cycle;
-  % Areal-tekst
+  \draw[very thick,gxu-accent] (H1) -- (H2) -- (H3) -- (H4) -- cycle;
   \node[anchor=north east,font=\sffamily\small] at (H1) {$a^{2}$};
   \node[anchor=north west,font=\sffamily\small] at (H3) {$b^{2}$};
   \node[anchor=center,font=\sffamily\small\color{gxu-purple}] at (H2 |- H3) {$c^{2}$};
 \end{tikzpicture}
-\caption{Venstte: retvinklet trekant med kateter $a$ og $b$ samt hypotenuse $c$. Højre: samme trekant indlagt i et kvadrat, der viser at $a^{2}+b^{2}=c^{2}$.}
+\caption{Venstre: retvinklet trekant med kateter $a$ og $b$ samt hypotenuse $c$. Højre: klassisk bevis --- fire ens trekanter placeret i et $(a+b)\times(a+b)$ kvadrat, med et indre $c^{2}$-kvadrat. Arealet af det store kvadrat $(a+b)^{2}=4\cdot\tfrac{1}{2}ab + c^{2}$ giver $a^{2}+b^{2}=c^{2}$.}
 \label{fig:pythagoras}
 \end{figure}
 
-For en retvinklet trekant gælder:
+\begin{regelbox}
+\textbf{Regel --- Pythagoras' sætning:} For en retvinklet trekant med
+kateter $a$ og $b$ og hypotenuse $c$ gælder
+\begin{equation}
+a^{2}+b^{2}=c^{2}
+\end{equation}
+\end{regelbox}
 
-\eq{3.1}{a^{2}+b^{2}=c^{2}}
+\subsection*{Eksempel --- $a=3$, $b=4$}
 
-hvor $c$ er hypotenusen (den længste side, modsat den rette vinkel).
-
-\begin{prompt}
-En retvinklet trekant har kateter $a=3$ og $b=4$. Find hypotenusen $c$.
-\end{prompt}
-\begin{solutionc}
-$c^{2}=3^{2}+4^{2}=9+16=25$, så $c=5$.
-\end{solutionc}
+\noindent
+\begin{align*}
+  c^{2} &= 3^{2}+4^{2} = 9+16 = 25 \\
+  c &= \sqrt{25} = 5
+\end{align*}
+Tjek: $3$-$4$-$5$ er en klassisk trekant.

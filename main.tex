@@ -17,7 +17,7 @@
 \definecolor{gxu-purple}{HTML}{7C5CFC}
 
 \newif\ifshowanswers
-\showanswerstrue
+\showanswersfalse   % elev-udgave: facit er kun i appendix; flip for lærer-version
 
 \newtcolorbox{prompt}{
   colback=gxu-paper,colframe=gxu-accent,boxrule=0.5pt,arc=4pt,
@@ -34,6 +34,10 @@
   colback=gxu-paper,colframe=gxu-purple,boxrule=0.8pt,arc=4pt,
   left=10pt,right=10pt,top=8pt,bottom=8pt,
   fonttitle=\sffamily\small\bfseries\color{gxu-purple},title=Definition
+}
+\newtcolorbox{regelbox}{
+  colback=gxu-paper, colframe=gxu-accent, boxrule=0.6pt, arc=4pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt
 }
 
 \newcommand{\kompetence}[1]{%
@@ -55,9 +59,35 @@
 \addtolength{\textheight}{2cm}
 \addtolength{\topmargin}{-1cm}
 
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{parskip}
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{gxu-accent}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gxu-accent}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{gxu-ink}}{\thesubsubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.4em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.4em}
+
 \begin{document}
+
+\begin{center}
+  {\Large\bfseries Trigonometri, Pythagoras og enhedscirklen}\\[2pt]
+  {\color{gxu-inksoft}\large Træningsopgavesæt}\\[6pt]
+  {\color{gxu-inksoft}\small 8.--9. klasse \quad -- \quad MULTI 7-9, kap.\ 6 og 3}
+\end{center}
+
+\vspace{6pt}
+\hrule height 0.4pt
+\vspace{10pt}
+
+\noindent
+Hver sektion starter med en kort regel og et udregnet eksempel --- så kan du
+løse de følgende opgaver på samme måde. Facit ligger bagerst i appendix.
+
 \input{sektioner/00_enhedscirkel}
 \input{sektioner/01_pythagoras}
 \input{sektioner/02_vinkelfunktioner}
 \input{sektioner/03_opgaver}
+\input{sektioner/04_appendix}
 \end{document}

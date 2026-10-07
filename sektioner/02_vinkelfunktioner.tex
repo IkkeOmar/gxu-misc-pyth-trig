@@ -1,80 +1,75 @@
-\section{4. Sinus, cosinus og tangens}
+\section{Sinus, cosinus og tangens}
 
 \kompetence{Regning} \kompetence{Modellering} \kompetence{Hjaelpemidler}
 
 \begin{figure}[ht]
 \centering
 \begin{tikzpicture}[>=Stealth,scale=2.5]
-  % Koordinatsystem
-  \draw[->] (-0.2,0) -- (1.3,0) node[below] {$x$};
+  \draw[->] (-0.2,0) -- (2.10,0) node[below] {$x$};
   \draw[->] (0,-0.2) -- (0,1.3) node[left] {$y$};
 
-  % Trekant
   \coordinate (A) at (0,0);
   \coordinate (B) at (1,0);
   \coordinate (C) at (1,0.75);
 
-  % Trekant-sider
   \draw[very thick] (A) -- (B) node[midway,below] {$a$} -- (C) node[midway,right] {$b$} -- cycle;
   \draw[very thick,gxu-accent] (A) -- (C) node[midway,left] {$c$};
 
-  % Vinkel
   \node at (0.2,0.1) {$\theta$};
 
-  % Ret vinkel-markør
   \draw (0.92,0) -- (0.92,0.08) -- (1,0.08);
 
-  % Hypotenuse-navn flyttet
   \node[anchor=south east] at (0.35,0.26) {$c$};
 \end{tikzpicture}
 \qquad
 \begin{tikzpicture}[>=Stealth,scale=2.5]
   \pgfmathsetmacro{\cx}{cos(36.87)}
   \pgfmathsetmacro{\cy}{sin(36.87)}
-  % Koordinatsystem
-  \draw[->] (-0.2,0) -- (1.3,0) node[below] {$x$};
+  \draw[->] (-0.2,0) -- (2.10,0) node[below] {$x$};
   \draw[->] (0,-0.2) -- (0,1.3) node[left] {$y$};
   \draw[thick] (0,0) circle (1);
 
-  % Trekant: ret vinkel ved O, hypotenuse = radius til P
   \coordinate (P) at (\cx,\cy);
   \coordinate (B) at (\cx,0);
   \draw[thick] (0,0) -- (B) node[midway,below] {$1$} -- (P) -- cycle;
   \draw[very thick,gxu-accent] (0,0) -- (P) node[midway,left] {$\tan\theta$};
 
-  % Ret vinkel-markør ved O
   \draw (0.08,0) -- (0.08,0.08) -- (0,0.08);
 
-  % Radius = 1 label
   \node[anchor=north west] at (0.1,0.05) {$c=1$};
+  \draw[thick] (1,-0.04) -- (1,0.04) node[below=4pt] {$1$};
 
-  % Vinkel-buе med pil
   \draw[->,thick,gxu-accent] (0.25,0) arc[start angle=0,end angle=36.87,radius=0.25];
 
-  % Tekst
-  \node[anchor=south west] at (0.55,0.10) {$a/b = \tan\theta$};
-  \node[anchor=south west] at (0.55,0.26) {$b = \cos\theta$};
-  \node[anchor=south west] at (0.55,0.42) {$a = \sin\theta$};
+  \node[anchor=west] at (1.20,-0.55) {$a/b = \tan\theta$};
+  \node[anchor=west] at (1.20,0.00) {$b = \cos\theta$};
+  \node[anchor=west] at (1.20,0.55) {$a = \sin\theta$};
 
-  % Navn P
-  \node[anchor=south west] at (\cx+0.04,\cy) {$P=(\cos\theta,\sin\theta)$};
+  \node[anchor=south] at (\cx,\cy+0.10) {$P$};
 \end{tikzpicture}
-\caption{Venstte: sinus, cosinus og tangens defineret fra en retvinklet trekant. Højre: de samme forhold aflæst på enhedscirklen.}
+\caption{Venstre: sinus, cosinus og tangens defineret fra en retvinklet trekant. Højre: de samme forhold aflæst på enhedscirklen, hvor $c=1$.}
 \label{fig:trigtrekant}
 \end{figure}
 
-For en retvinklet trekant med vinkel $\theta$ gælder:
+\begin{regelbox}
+\textbf{Regel --- sinus, cosinus og tangens:} For en retvinklet trekant
+med vinkel $\theta$ (i grader), katet $a$ over for $\theta$, katet $b$
+hos $\theta$ og hypotenuse $c$:
+\begin{equation*}
+\sin\theta=\frac{a}{c}\qquad\cos\theta=\frac{b}{c}\qquad\tan\theta=\frac{a}{b}
+\end{equation*}
+\end{regelbox}
 
-\eq{4.1}{\sin\theta=\frac{a}{c}\qquad\cos\theta=\frac{b}{c}\qquad\tan\theta=\frac{a}{b}}
+\subsection*{Eksempel --- $a=5$, $c=13$}
 
-hvor $a$ er kateten over for $\theta$, $b$ er kateten hos $\theta$, og $c$ er hypotenusen.
-
-\note{Vinklen $\theta$ er i grader.}
-
-\begin{prompt}
-I en retvinklet trekant er $a=5$ og $c=13$. Find $\sin\theta$, $\cos\theta$ og $\tan\theta$.
-\end{prompt}
-\begin{solutionc}
-Først $b=\sqrt{13^{2}-5^{2}}=\sqrt{169-25}=\sqrt{144}=12$.\\
-Derefter: $\sin\theta=5/13$, $\cos\theta=12/13$, $\tan\theta=5/12$.
-\end{solutionc}
+\noindent
+Først findes $b$ med Pythagoras:
+\begin{align*}
+  b &= \sqrt{13^{2}-5^{2}} = \sqrt{169-25} = \sqrt{144} = 12
+\end{align*}
+Derefter de tre forhold:
+\begin{align*}
+  \sin\theta &= \frac{a}{c} = \frac{5}{13}, &
+  \cos\theta &= \frac{b}{c} = \frac{12}{13}, &
+  \tan\theta &= \frac{a}{b} = \frac{5}{12}
+\end{align*}

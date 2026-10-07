@@ -1,0 +1,63 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[danish]{babel}
+\usepackage{icomma}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,enumitem,graphicx,xcolor,environ}
+\usepackage[hidelinks]{hyperref}
+\usepackage[capitalise,nameinlink]{cleveref}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric}
+
+\definecolor{gxu-paper}{HTML}{F7F9FB}
+\definecolor{gxu-ink}{HTML}{1A1F2B}
+\definecolor{gxu-inksoft}{HTML}{4A5568}
+\definecolor{gxu-accent}{HTML}{58C4DD}
+\definecolor{gxu-purple}{HTML}{7C5CFC}
+
+\newif\ifshowanswers
+\showanswerstrue
+
+\newtcolorbox{prompt}{
+  colback=gxu-paper,colframe=gxu-accent,boxrule=0.5pt,arc=4pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\sffamily\small\bfseries,title=Arbejdsspørgsmål
+}
+\newtcolorbox{solution}{
+  colback=gxu-accent!8,colframe=gxu-accent,boxrule=0.5pt,arc=4pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\sffamily\small\bfseries,title=Facit
+}
+\NewEnviron{solutionc}{\ifshowanswers\begin{solution}\BODY\end{solution}\fi}
+\newtcolorbox{definition}{
+  colback=gxu-paper,colframe=gxu-purple,boxrule=0.8pt,arc=4pt,
+  left=10pt,right=10pt,top=8pt,bottom=8pt,
+  fonttitle=\sffamily\small\bfseries\color{gxu-purple},title=Definition
+}
+
+\newcommand{\kompetence}[1]{%
+  \tcbset{mychip/.style={colback=gxu-accent!15,colframe=gxu-accent,boxrule=0.4pt,arc=10pt,left=6pt,right=6pt,top=3pt,bottom=3pt,fontupper=\sffamily\small}}
+  \begin{tcolorbox}[mychip]#1\end{tcolorbox}\vspace{-4pt}
+}
+
+\makeatletter
+\newcommand{\eq}[2]{\begin{equation}#2\tag{#1}\end{equation}}
+\makeatother
+\newcommand{\note}[1]{{\small\color{gxu-inksoft}\textit{#1}}\par}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small\color{gxu-inksoft}GXU -- Matematik}
+\fancyhead[R]{\sffamily\small\color{gxu-inksoft}Trigonometri \& Enhedscirkel}
+\fancyfoot[C]{\thepage}
+\pagestyle{fancy}
+\addtolength{\textheight}{2cm}
+\addtolength{\topmargin}{-1cm}
+
+\begin{document}
+\input{sektioner/00_enhedscirkel}
+\input{sektioner/01_pythagoras}
+\input{sektioner/02_vinkelfunktioner}
+\input{sektioner/03_opgaver}
+\end{document}

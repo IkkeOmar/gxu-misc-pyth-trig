@@ -1,0 +1,72 @@
+\section{1. Enhedscirklen}
+
+\kompetence{Tankegang} \kompetence{Modellering} \kompetence{Repraesentation}
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[>=Stealth,scale=2.8]
+  % Koordinatsystem
+  \draw[->] (-1.4,0) -- (1.4,0) node[below left] {$x$};
+  \draw[->] (0,-1.4) -- (0,1.4) node[below left] {$y$};
+  \draw[thick] (0,0) circle (1);
+
+  % Vinkelpunkt og sti
+  \coordinate (P) at ({cos(35)},{sin(35)});
+  \coordinate (Px) at ({cos(35)},0);
+  \coordinate (Py) at (0,{sin(35)});
+
+  % Vinkelbuen
+  \draw[very thick,gxu-accent] (1,0) arc[start angle=0,end angle=35,radius=1];
+
+  % Koordinat-ticks
+  \foreach \t/\lab in {1/{1},-1/{-1}} {
+    \draw[thick] (\t,0.04) -- (\t,-0.04) node[below] {$\lab$};
+    \draw[thick] (0.04,\t) -- (-0.04,\t) node[left] {$\lab$};
+  }
+
+  % Punktet P med kryds
+  \fill[gxu-accent] (P) circle (0.025);
+  \node[anchor=south west] at (P) {$\;(x,y)$};
+
+  % Projektioner (stiplede)
+  \draw[dashed,gxu-inksoft] (P) -- (Px);
+  \draw[dashed,gxu-inksoft] (P) -- (Py);
+
+  % Aksel-navne ved projektionerne
+  \node[below] at (Px) {$x=\cos\theta$};
+  \node[left] at (Py) {$y=\sin\theta$};
+
+  % Vinkelhældning
+  \node[anchor=south west,rotate=35] at (0.55,0.08) {$\theta$};
+
+  % Radius-linje
+  \draw[very thick,gxu-purple] (0,0) -- (P);
+
+  % Trekant horisontal/vertikal
+  \draw[thick] (Px) -- (P) -- (Py);
+\end{tikzpicture}
+\caption{Enhedscirklen. Punktet $P=(\cos\theta,\sin\theta)$ ligger på cirklen med radius 1. Koordinaterne er direkte læsningen af $\cos\theta$ (på $x$-aksen) og $\sin\theta$ (på $y$-aksen).}
+\label{fig:enhedscirkel}
+\end{figure}
+
+\begin{prompt}
+Hvad er $(\cos\theta,\sin\theta)$ for $\theta = 0^{\circ}$, $\theta = 90^{\circ}$ og $\theta = 270^{\circ}$?
+\end{prompt}
+
+\begin{solutionc}
+\begin{itemize}
+  \item $\theta = 0^{\circ}$: $(\cos0^{\circ},\sin0^{\circ}) = (1,0)$
+  \item $\theta = 90^{\circ}$: $(\cos90^{\circ},\sin90^{\circ}) = (0,1)$
+  \item $\theta = 270^{\circ}$: $(\cos270^{\circ},\sin270^{\circ}) = (0,-1)$
+\end{itemize}
+\end{solutionc}
+
+\section{2. Grundrelationen $\cos^{2}\theta+\sin^{2}\theta=1$}
+
+Af figuren har trekanten med hypotenusen $1$ kateten $\cos\theta$ og $\sin\theta$, hvoraf:
+
+\eq{1.1}{\cos^{2}\theta+\sin^{2}\theta=1}
+
+\begin{solutionc}
+\eq{}{(\tfrac{3}{5})^{2}+(\tfrac{4}{5})^{2}=\tfrac{9}{25}+\tfrac{16}{25}=\tfrac{25}{25}=1 \qquad\checkmark}
+\end{solutionc}
